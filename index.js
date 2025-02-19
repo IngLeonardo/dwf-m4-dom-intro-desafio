@@ -25,6 +25,26 @@ const cosasQueAprendimos = [
   },
 ];
 
-function main() {}
+function main() {
+
+  let lista = document.querySelector(".lista")
+  let items = document.querySelectorAll("li")
+  
+
+  items.forEach(element => {
+    element.remove();
+  });
+
+  for(i= 0; i< cosasQueAprendimos.length; i++ ){
+    
+    let NewList = document.createElement("li");
+    NewList.innerHTML = cosasQueAprendimos[i].tema;
+    NewList.className = cosasQueAprendimos[i].class
+
+    lista.appendChild(NewList)
+  
+  }
+  
+}
 
 main();
